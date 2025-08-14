@@ -8,6 +8,14 @@
 
 </div>
 
+> **Note**: This is a fork of the original [fzf.fish](https://github.com/patrickf1/fzf.fish) with additional features that are not present in the upstream repository.
+
+## Fork Features
+
+This fork includes the following additional features:
+
+- **🌿 Search Git Branch** (<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd>) - Search through all git branches (local and remote) with commit history preview
+
 Augment your [Fish][] command line with mnemonic key bindings to efficiently find what you need using [fzf][].
 
 https://user-images.githubusercontent.com/1967248/197308919-51d04602-2d5f-46aa-a96e-6cf1617e3067.mov
@@ -46,6 +54,16 @@ Use `fzf.fish` to interactively find and insert file paths, git commit hashes, a
 - **Output:** relative paths of selected lines
 - **Key binding and mnemonic:** <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>S</kbd> (`S` for status)
 - **Preview window:** the git diff of the file
+
+### 🌿 Search Git Branch
+
+- **Fzf input:** all git branches (local and remote)
+- **Output:** selected branch name
+- **Key binding and mnemonic:** <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd> (`B` for branch)
+- **Preview window:** commit history of the branch
+- **Remarks**
+  - remote branch prefixes (`remotes/`) are automatically removed from the output
+  - works with both local and remote branches
 
 ### 📜 Search History
 
@@ -123,6 +141,7 @@ Each command's fzf options can be configured via a variable:
 | Search Directory  | `fzf_directory_opts`  |
 | Search Git Log    | `fzf_git_log_opts`    |
 | Search Git Status | `fzf_git_status_opts` |
+| Search Git Branch | `fzf_git_branch_opts` |
 | Search History    | `fzf_history_opts`    |
 | Search Processes  | `fzf_processes_opts`  |
 | Search Variables  | `fzf_variables_opts`  |
