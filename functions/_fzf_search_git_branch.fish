@@ -8,7 +8,7 @@ function _fzf_search_git_branch --description "Search git branches. Replace the 
             _fzf_wrapper --ansi \
                 --prompt="Git Branch> " \
                 --query=(commandline --current-token) \
-                --preview='git log --oneline --graph --color=always {2}' \
+                --preview='echo {} | sed "s/^[ *]*//" | sed "s/^remotes\///" | xargs git log --oneline --graph --color=always' \
                 $fzf_git_branch_opts
         )
         if test $status -eq 0
